@@ -6,3 +6,4 @@ nav:
   - About: about.md
 theme:
   name: readthedocs
+  favicon: favicon.ico
