@@ -7,3 +7,8 @@ nav:
 theme:
   name: readthedocs
   favicon: favicon.ico
+
+markdown_extensions:
+  - attr_list # allow to add HTML attributes and CSS classes
+  - md_in_html # allow to write Markdown inside HTML elements
+

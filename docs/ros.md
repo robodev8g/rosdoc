@@ -14,3 +14,5 @@ Make sure you have python installed: 𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠�
 NEW COMMAND: 𝑔𝑒𝑑𝑖𝑡 – opens files in a more comfortable user interface.
 
 For example: 𝑔𝑒𝑑𝑖𝑡 ~/.𝑏𝑎𝑠ℎ𝑟𝑐.
+
+Some additinal part..
