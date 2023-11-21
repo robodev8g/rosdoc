@@ -77,15 +77,63 @@
                 <h1 id="ros2-for-beginners">ROS2 For Beginners</h1>
 <h2 id="install-ros2-and-setup-your-environment">Install ROS2 and Setup Your Environment:</h2>
 <p>I assume you have a virtual machine with Linux distribution on it (like Ubuntu).
-Use 𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑢𝑝𝑑𝑎𝑡𝑒 , 𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑢𝑝𝑔𝑟𝑎𝑑𝑒 , 𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑎𝑢𝑡𝑜𝑟𝑒𝑚𝑜𝑣𝑒 to make sure your system is up to date.</p>
+<code>Use 𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑢𝑝𝑑𝑎𝑡𝑒 , 𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑢𝑝𝑔𝑟𝑎𝑑𝑒 , 𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑎𝑢𝑡𝑜𝑟𝑒𝑚𝑜𝑣𝑒</code> to make sure your system is up to date.</p>
 <h3 id="terminator">Terminator</h3>
 <p>𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 𝑡𝑒𝑟𝑚𝑖𝑛𝑎𝑡𝑜𝑟</p>
 <p><img alt="" src="images/terminator_shortcuts.png" /></p>
 <h3 id="vs-code">VS-code:</h3>
 <p>Add three main extensions – C/C++, CMake, Python.
-Make sure you have python installed: 𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 𝑝𝑦𝑡ℎ𝑜𝑛3−𝑝𝑖𝑝</p>
-<p>NEW COMMAND: 𝑔𝑒𝑑𝑖𝑡 – opens files in a more comfortable user interface.</p>
-<p>For example: 𝑔𝑒𝑑𝑖𝑡 ~/.𝑏𝑎𝑠ℎ𝑟𝑐.</p>
+Make sure you have python installed: <code>𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 𝑝𝑦𝑡ℎ𝑜𝑛3−𝑝𝑖𝑝</code></p>
+<p>NEW COMMAND: <code>𝑔𝑒𝑑𝑖𝑡</code> – opens files in a more comfortable user interface.</p>
+<p>For example: <code>𝑔𝑒𝑑𝑖𝑡 ~/.𝑏𝑎𝑠ℎ𝑟𝑐</code>.</p>
+<h3 id="ros2">ROS2:</h3>
+<p>As of this writing the most current distribution of ROS2 is Humble Hawksbill.</p>
+<p>Enter ROS2 Documentation: Humble and choose Ubuntu (Debian). Follow the steps there including Setup locale, Setup Sources, Install ROS2 packages. Then, run the desktop installation command line to have all the ROS2 tools.</p>
+<p>By the end of the previous part, you should have <code>/𝑜𝑝𝑡/𝑟𝑜𝑠/ℎ𝑢𝑚𝑏𝑙𝑒 folder</code>.</p>
+<p>In order to use ROS2 you need to run: 𝑠𝑜𝑢𝑟𝑐𝑒 <code>/𝑜𝑝𝑡/𝑟𝑜𝑠/ℎ𝑢𝑚𝑏𝑙𝑒/𝑠𝑒𝑡𝑢𝑝.𝑏𝑎𝑠ℎ</code>. To avoid running this command again in any new terminal, add this command into <code>~/.𝑏𝑎𝑠ℎ𝑟𝑐</code>.</p>
+<p>NEW COMMAND: <code>𝑟𝑜𝑠2 𝑟𝑢𝑛 &lt;𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸&gt; &lt;𝐸𝑋𝐸𝐶𝑈𝑇𝐴𝐵𝐿𝐸&gt;</code></p>
+<p>Check the <code>𝑑𝑒𝑚𝑜_𝑛𝑜𝑑𝑒𝑠_𝑐𝑝𝑝</code> package for practice (talker, listener etc.).</p>
+<h2 id="write-your-first-ros2-program">Write Your First ROS2 Program:</h2>
+<h3 id="colcon">Colcon:</h3>
+<p>A build tool created for ROS2.</p>
+<p><code>𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 p𝑦𝑡ℎ𝑜𝑛3−𝑐𝑜𝑙𝑐𝑜𝑛−𝑐𝑜𝑚𝑚𝑜𝑛−𝑒𝑥𝑡𝑒𝑛𝑠𝑖𝑜𝑛𝑠</code></p>
+<p>Auto completion feature is not enabled as default. To enable this feature, you will need to run:</p>
+<p><code>source /usr/share/colcon_argcomplete/hook/colcon−argcomplete.bash</code></p>
+<p>Also here, it recommended to add this command into <code>~/.𝑏𝑎𝑠ℎ𝑟𝑐</code>.</p>
+<h3 id="ros2-workspace">ROS2 Workspace:</h3>
+<p>First, create a new folder: <code>𝑚𝑘𝑑𝑖𝑟 ~/𝑟𝑜𝑠2_𝑤𝑠</code>. Second, create source code folder: <code>𝑚𝑘𝑑𝑖𝑟 ~/𝑟𝑜𝑠2_𝑤𝑠/𝑠𝑟𝑐</code>. Stay at the 𝑟𝑜𝑠2_𝑤𝑠 folder and run:</p>
+<p>NEW COMMAND: <code>𝑐𝑜𝑙𝑐𝑜𝑛 𝑏𝑢𝑖𝑙𝑑</code> - this command creates the install, log and build folders inside 𝑟𝑜𝑠2_𝑤𝑠 (the workspace folder). We will use some additional parts in this command when we will compile a package (look down at this page).</p>
+<p>In install folder, there is a 𝑠𝑒𝑡𝑢𝑝.𝑏𝑎𝑠ℎ file needs to be sourced. In case you will use this workspace often, it is recommended to add 𝑠𝑜𝑢𝑟𝑐𝑒 <code>~/𝑟𝑜𝑠2_𝑤𝑠/𝑖𝑛𝑠𝑡𝑎𝑙𝑙/𝑠𝑒𝑡𝑢𝑝.𝑏𝑎𝑠ℎ</code> into the <code>~/.𝑏𝑎𝑠ℎ𝑟𝑐</code> file too.</p>
+<h3 id="ros2-package">ROS2 Package:</h3>
+<p>The code in workspace will be organized in packages. All packages will be in the <code>~/𝑟𝑜𝑠2_𝑤𝑠/𝑠𝑟𝑐</code> folder. To create a new one, stand at this location and run:</p>
+<p>NEW COMMAND: <code>𝑟𝑜𝑠2 𝑝𝑘𝑔 𝑐𝑟𝑒𝑎𝑡𝑒&lt;𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸&gt;</code></p>
+<p>Commonly we will use this command with 2 additional parts:</p>
+<p><code>−−𝑏𝑢𝑖𝑙𝑑−𝑡𝑦𝑝𝑒&lt;𝐵𝑈𝐼𝐿𝐷_𝑇𝑌𝑃𝐸&gt;</code>: telling whether we want a python or cpp package. Enter here 𝑎𝑚𝑒𝑛𝑡_𝑝𝑦𝑡ℎ𝑜𝑛 or 𝑎𝑚𝑒𝑛𝑡_𝑐𝑚𝑎𝑘𝑒.</p>
+<p><code>−−𝑑𝑒𝑝𝑒𝑛𝑑𝑒𝑛𝑐𝑖𝑒𝑠&lt;𝐷𝐸𝑃𝐸𝑁𝐷𝐸𝑁𝐶𝐼𝐸𝑆_𝐿𝐼𝑆𝑇&gt;</code>: other packages we will use in ours.</p>
+<p>A new package comes with a folder in it which has the same name as the package itself. There we will write our ROS2 nodes in the future. The package also comes with a 
+<code>𝑝𝑎𝑐𝑘𝑎𝑔𝑒.𝑥𝑚𝑙</code> file. This file contains some global details, the package dependencies and build type.</p>
+<h3 id="compile-ros2-package">Compile ROS2 package:</h3>
+<p>After writing some code, before running it, we need to build the package by standing at <code>~/𝑟𝑜𝑠2_𝑤𝑠</code> (the workspace folder) and run:</p>
+<p>COMMAND: <code>𝑐𝑜𝑙𝑐𝑜𝑛 𝑏𝑢𝑖𝑙𝑑</code></p>
+<p>To build only specific packages you can use: <code>−−𝑝𝑎𝑐𝑘𝑎𝑔𝑒𝑠_𝑠𝑒𝑙𝑒𝑐𝑡&lt;𝑃𝐴𝐶𝐾𝐴𝐺𝐸𝑆_𝐿𝐼𝑆𝑇&gt;</code></p>
+<p>To automatically build the package use:
+You might see a 𝑆𝑒𝑡𝑢𝑝𝑡𝑜𝑜𝑙𝑠𝐷𝑒𝑝𝑟𝑒𝑐𝑎𝑡𝑖𝑜𝑛𝑊𝑎𝑟𝑛𝑖𝑛𝑔. The reason of that is the version of 𝑠𝑒𝑡𝑢𝑝𝑡𝑜𝑜𝑙𝑠 as you can see by running: <code>𝑝𝑖𝑝3 𝑙𝑖𝑠𝑡 | 𝑔𝑟𝑒𝑝 𝑠𝑒𝑡𝑢𝑝𝑡𝑜𝑜𝑙𝑠</code>.</p>
+<p>To fix that run: <code>𝑝𝑖𝑝3 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 𝑠𝑒𝑡𝑢𝑝𝑡𝑜𝑜𝑙𝑠==58.2.0</code> to downgrade <code>𝑠𝑒𝑡𝑢𝑝𝑡𝑜𝑜𝑙𝑠</code>.</p>
+<h3 id="running-ros2-node">Running ROS2 Node:</h3>
+<p>A node is a python file. We will write our first nodes according to fixed template I will show later in Writing ROS2 Node section. To run a ROS2 node we can make the file to be executable (using <code>𝑐ℎ𝑚𝑜𝑑</code> command) and just run it like:</p>
+<p><code>𝑝𝑦𝑡ℎ𝑜𝑛3&lt;𝑃𝑌𝑇𝐻𝑂𝑁_𝑁𝑂𝐷𝐸_𝐹𝐼𝐿𝐸_𝑁𝐴𝑀𝐸&gt;</code></p>
+<p>Good to Know: When you are writing python file, you can use 𝑠ℎ𝑎𝑏𝑎𝑛𝑔 in the first code line. It is a line starts with #! that sets the interpreter which will run the code. Usually will be:</p>
+<p><code>#!/𝑢𝑠𝑟/𝑏𝑖𝑛/𝑒𝑛𝑣 𝑝𝑦𝑡ℎ𝑜𝑛3</code></p>
+<p>That way we will run a node like:</p>
+<p><code>./&lt;𝑃𝑌𝑇𝐻𝑂𝑁_𝑁𝑂𝐷𝐸_𝐹𝐼𝐿𝐸&gt;</code></p>
+<h3 id="install-ros2-node-into-workspace">Install ROS2 Node into Workspace:</h3>
+<p>we don’t want to run nodes like above because it is not scalable. Instead, we will install the nodes. We do so using the <code>𝑠𝑒𝑡𝑢𝑝.𝑝𝑦</code>. In this file there is a python dictionary named <code>𝑒𝑛𝑡𝑟𝑦_𝑝𝑜𝑖𝑛𝑡𝑠</code>.</p>
+<p>In this dictionary, there is a <code>𝑐𝑜𝑛𝑠𝑜𝑙𝑒_𝑠𝑐𝑟𝑖𝑝𝑡𝑠</code> key which contains an array. This array is the place where we are telling ROS2 which nodes it should know.</p>
+<p>When we will build the package later, ROS2 will take the python filles we put there and make executables from them. The location where these executables we be stored in is written in the <code>𝑠𝑒𝑡𝑢𝑝.𝑐𝑓𝑔</code> file.</p>
+<p>If any error occurs you might need to run: <code>𝑠𝑜𝑢𝑟𝑐𝑒 ~/.𝑏𝑎𝑠ℎ𝑟𝑐</code> to sure you have the latest version of your package.</p>
+<h3 id="ros2-run-tool">ROS2 run tool:</h3>
+<p>Usually we will not run our nodes as described in <code>Running ROS2 Node</code> section. The way we will do so is by:</p>
+<p>COMMAND: <code>𝑟𝑜𝑠2 𝑟𝑢𝑛 &lt;𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸&gt; &lt;𝐸𝑋𝐸𝐶𝑈𝑇𝐴𝐵𝐿𝐸&gt;</code>.</p>
               
             </div>
           </div><footer>
