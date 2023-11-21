@@ -43,38 +43,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">ROS2 For Beginners</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-ros2-and-setup-your-environment">Install ROS2 and Setup Your Environment:</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#terminator">Terminator</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#vs-code">VS-code:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ros2">ROS2:</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#write-your-first-ros2-program">Write Your First ROS2 Program:</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#colcon">Colcon:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ros2-workspace">ROS2 Workspace:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ros2-package">ROS2 Package:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#compile-ros2-package">Compile ROS2 package:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#running-ros2-node">Running ROS2 Node:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#install-ros2-node-into-workspace">Install ROS2 Node into Workspace:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ros2-run-tool">ROS2 run tool:</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../ros.md">ROS2 For Beginners</a>
                 </li>
               </ul>
               <ul>
@@ -106,36 +76,39 @@
               
                 <h1 id="ros2-for-beginners">ROS2 For Beginners</h1>
 <h2 id="install-ros2-and-setup-your-environment">Install ROS2 and Setup Your Environment:</h2>
-<p>I assume you have a virtual machine with Linux distribution on it (like Ubuntu).</p>
-<pre><code class="language-bash">𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑢𝑝𝑑𝑎𝑡𝑒
+<p>I assume you have a virtual machine with Linux distribution on it (like Ubuntu).
+<code>bash
+𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑢𝑝𝑑𝑎𝑡𝑒
 𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑢𝑝𝑔𝑟𝑎𝑑𝑒
-𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑎𝑢𝑡𝑜𝑟𝑒𝑚𝑜𝑣𝑒
-</code></pre>
+𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑎𝑢𝑡𝑜𝑟𝑒𝑚𝑜𝑣𝑒</code> </p>
 <p>to make sure your system is up to date.</p>
 <h3 id="terminator">Terminator</h3>
-<pre><code class="language-bash">𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 𝑡𝑒𝑟𝑚𝑖𝑛𝑎𝑡𝑜𝑟
-</code></pre>
-<p><img alt="" src="images/terminator_shortcuts.png" /></p>
+<p><code>bash
+𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 𝑡𝑒𝑟𝑚𝑖𝑛𝑎𝑡𝑜𝑟</code>
+<img alt="" src="images/terminator_shortcuts.png" /></p>
 <h3 id="vs-code">VS-code:</h3>
 <p>Add three main extensions – C/C++, CMake, Python.
-Make sure you have python installed:</p>
-<pre><code class="language-bash">𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 𝑝𝑦𝑡ℎ𝑜𝑛3−𝑝𝑖𝑝
-</code></pre>
+Make sure you have python installed:
+<code>bash 
+𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 𝑝𝑦𝑡ℎ𝑜𝑛3−𝑝𝑖𝑝</code></p>
 <p>NEW COMMAND: <code>𝑔𝑒𝑑𝑖𝑡</code> – opens files in a more comfortable user interface.</p>
 <p>For example: <code>𝑔𝑒𝑑𝑖𝑡 ~/.𝑏𝑎𝑠ℎ𝑟𝑐</code>.</p>
 <h3 id="ros2">ROS2:</h3>
 <p>As of this writing the most current distribution of ROS2 is Humble Hawksbill.</p>
 <p>Enter ROS2 Documentation: Humble and choose Ubuntu (Debian). Follow the steps there including Setup locale, Setup Sources, Install ROS2 packages. Then, run the desktop installation command line to have all the ROS2 tools.</p>
-<p>By the end of the previous part, you should have <code>/𝑜𝑝𝑡/𝑟𝑜𝑠/ℎ𝑢𝑚𝑏𝑙𝑒 folder</code>.</p>
+<p>By the end of the previous part, you should have <code>/𝑜𝑝𝑡/𝑟𝑜𝑠/ℎ𝑢𝑚𝑏𝑙𝑒</code> directory.</p>
 <p>In order to use ROS2 you need to run: 𝑠𝑜𝑢𝑟𝑐𝑒 <code>/𝑜𝑝𝑡/𝑟𝑜𝑠/ℎ𝑢𝑚𝑏𝑙𝑒/𝑠𝑒𝑡𝑢𝑝.𝑏𝑎𝑠ℎ</code>. To avoid running this command again in any new terminal, add this command into <code>~/.𝑏𝑎𝑠ℎ𝑟𝑐</code>.</p>
-<p>NEW COMMAND: <code>𝑟𝑜𝑠2 𝑟𝑢𝑛 &lt;𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸&gt; &lt;𝐸𝑋𝐸𝐶𝑈𝑇𝐴𝐵𝐿𝐸&gt;</code></p>
+<p><code>bash title="NEW COMMAND"
+𝑟𝑜𝑠2 𝑟𝑢𝑛 &lt;𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸&gt; &lt;𝐸𝑋𝐸𝐶𝑈𝑇𝐴𝐵𝐿𝐸&gt;</code></p>
 <p>Check the <code>𝑑𝑒𝑚𝑜_𝑛𝑜𝑑𝑒𝑠_𝑐𝑝𝑝</code> package for practice (talker, listener etc.).</p>
 <h2 id="write-your-first-ros2-program">Write Your First ROS2 Program:</h2>
 <h3 id="colcon">Colcon:</h3>
 <p>A build tool created for ROS2.</p>
-<p><code>𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 p𝑦𝑡ℎ𝑜𝑛3−𝑐𝑜𝑙𝑐𝑜𝑛−𝑐𝑜𝑚𝑚𝑜𝑛−𝑒𝑥𝑡𝑒𝑛𝑠𝑖𝑜𝑛𝑠</code></p>
+<p><code>bash
+𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 p𝑦𝑡ℎ𝑜𝑛3−𝑐𝑜𝑙𝑐𝑜𝑛−𝑐𝑜𝑚𝑚𝑜𝑛−𝑒𝑥𝑡𝑒𝑛𝑠𝑖𝑜𝑛𝑠</code></p>
 <p>Auto completion feature is not enabled as default. To enable this feature, you will need to run:</p>
-<p><code>source /usr/share/colcon_argcomplete/hook/colcon−argcomplete.bash</code></p>
+<p><code>bash
+source /usr/share/colcon_argcomplete/hook/colcon−argcomplete.bash</code></p>
 <p>Also here, it recommended to add this command into <code>~/.𝑏𝑎𝑠ℎ𝑟𝑐</code>.</p>
 <h3 id="ros2-workspace">ROS2 Workspace:</h3>
 <p>First, create a new folder: <code>𝑚𝑘𝑑𝑖𝑟 ~/𝑟𝑜𝑠2_𝑤𝑠</code>. Second, create source code folder: <code>𝑚𝑘𝑑𝑖𝑟 ~/𝑟𝑜𝑠2_𝑤𝑠/𝑠𝑟𝑐</code>. Stay at the 𝑟𝑜𝑠2_𝑤𝑠 folder and run:</p>
@@ -143,15 +116,17 @@ Make sure you have python installed:</p>
 <p>In install folder, there is a 𝑠𝑒𝑡𝑢𝑝.𝑏𝑎𝑠ℎ file needs to be sourced. In case you will use this workspace often, it is recommended to add 𝑠𝑜𝑢𝑟𝑐𝑒 <code>~/𝑟𝑜𝑠2_𝑤𝑠/𝑖𝑛𝑠𝑡𝑎𝑙𝑙/𝑠𝑒𝑡𝑢𝑝.𝑏𝑎𝑠ℎ</code> into the <code>~/.𝑏𝑎𝑠ℎ𝑟𝑐</code> file too.</p>
 <h3 id="ros2-package">ROS2 Package:</h3>
 <p>The code in workspace will be organized in packages. All packages will be in the <code>~/𝑟𝑜𝑠2_𝑤𝑠/𝑠𝑟𝑐</code> folder. To create a new one, stand at this location and run:</p>
-<p>NEW COMMAND: <code>𝑟𝑜𝑠2 𝑝𝑘𝑔 𝑐𝑟𝑒𝑎𝑡𝑒&lt;𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸&gt;</code></p>
-<p>Commonly we will use this command with 2 additional parts:</p>
-<p><code>−−𝑏𝑢𝑖𝑙𝑑−𝑡𝑦𝑝𝑒&lt;𝐵𝑈𝐼𝐿𝐷_𝑇𝑌𝑃𝐸&gt;</code>: telling whether we want a python or cpp package. Enter here 𝑎𝑚𝑒𝑛𝑡_𝑝𝑦𝑡ℎ𝑜𝑛 or 𝑎𝑚𝑒𝑛𝑡_𝑐𝑚𝑎𝑘𝑒.</p>
-<p><code>−−𝑑𝑒𝑝𝑒𝑛𝑑𝑒𝑛𝑐𝑖𝑒𝑠&lt;𝐷𝐸𝑃𝐸𝑁𝐷𝐸𝑁𝐶𝐼𝐸𝑆_𝐿𝐼𝑆𝑇&gt;</code>: other packages we will use in ours.</p>
+<p><code>bash title="NEW COMMAND"
+𝑟𝑜𝑠2 𝑝𝑘𝑔 𝑐𝑟𝑒𝑎𝑡𝑒&lt;𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸&gt;</code></p>
+<p>Usually we will use this command with 2 additional parts:</p>
+<p><code>−−𝑏𝑢𝑖𝑙𝑑−𝑡𝑦𝑝𝑒 &lt;𝐵𝑈𝐼𝐿𝐷_𝑇𝑌𝑃𝐸&gt;</code>: telling whether we want a python or cpp package. Enter here 𝑎𝑚𝑒𝑛𝑡_𝑝𝑦𝑡ℎ𝑜𝑛 or 𝑎𝑚𝑒𝑛𝑡_𝑐𝑚𝑎𝑘𝑒.</p>
+<p><code>−−𝑑𝑒𝑝𝑒𝑛𝑑𝑒𝑛𝑐𝑖𝑒𝑠 &lt;𝐷𝐸𝑃𝐸𝑁𝐷𝐸𝑁𝐶𝐼𝐸𝑆_𝐿𝐼𝑆𝑇&gt;</code>: other packages we will use in ours.</p>
 <p>A new package comes with a folder in it which has the same name as the package itself. There we will write our ROS2 nodes in the future. The package also comes with a 
 <code>𝑝𝑎𝑐𝑘𝑎𝑔𝑒.𝑥𝑚𝑙</code> file. This file contains some global details, the package dependencies and build type.</p>
 <h3 id="compile-ros2-package">Compile ROS2 package:</h3>
 <p>After writing some code, before running it, we need to build the package by standing at <code>~/𝑟𝑜𝑠2_𝑤𝑠</code> (the workspace folder) and run:</p>
-<p>COMMAND: <code>𝑐𝑜𝑙𝑐𝑜𝑛 𝑏𝑢𝑖𝑙𝑑</code></p>
+<p><code>bash title="COMMAND"
+𝑐𝑜𝑙𝑐𝑜𝑛 𝑏𝑢𝑖𝑙𝑑</code></p>
 <p>To build only specific packages you can use: <code>−−𝑝𝑎𝑐𝑘𝑎𝑔𝑒𝑠_𝑠𝑒𝑙𝑒𝑐𝑡&lt;𝑃𝐴𝐶𝐾𝐴𝐺𝐸𝑆_𝐿𝐼𝑆𝑇&gt;</code></p>
 <p>To automatically build the package use:
 You might see a 𝑆𝑒𝑡𝑢𝑝𝑡𝑜𝑜𝑙𝑠𝐷𝑒𝑝𝑟𝑒𝑐𝑎𝑡𝑖𝑜𝑛𝑊𝑎𝑟𝑛𝑖𝑛𝑔. The reason of that is the version of 𝑠𝑒𝑡𝑢𝑝𝑡𝑜𝑜𝑙𝑠 as you can see by running: <code>𝑝𝑖𝑝3 𝑙𝑖𝑠𝑡 | 𝑔𝑟𝑒𝑝 𝑠𝑒𝑡𝑢𝑝𝑡𝑜𝑜𝑙𝑠</code>.</p>
@@ -171,13 +146,15 @@ You might see a 𝑆𝑒𝑡𝑢𝑝𝑡𝑜𝑜𝑙𝑠𝐷𝑒𝑝𝑟𝑒𝑐
 <h3 id="ros2-run-tool">ROS2 run tool:</h3>
 <p>Usually we will not run our nodes as described in <code>Running ROS2 Node</code> section. The way we will do so is by:</p>
 <p>COMMAND: <code>𝑟𝑜𝑠2 𝑟𝑢𝑛 &lt;𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸&gt; &lt;𝐸𝑋𝐸𝐶𝑈𝑇𝐴𝐵𝐿𝐸&gt;</code>.</p>
+<p><code>py title="bubble_sort.py" linenums="1"
+def bubble_sort(items):
+    for i in range(len(items)):
+        for j in range(len(items) - 1 - i):
+            if items[j] &gt; items[j + 1]:
+                items[j], items[j + 1] = items[j + 1], items[j]</code></p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -199,10 +176,6 @@ You might see a 𝑆𝑒𝑡𝑢𝑝𝑡𝑜𝑜𝑙𝑠𝐷𝑒𝑝𝑟𝑒𝑐
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
