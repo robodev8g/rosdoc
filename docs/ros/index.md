@@ -10,7 +10,7 @@ I assume you have a virtual machine with Linux distribution on it (like Ubuntu).
 
 to make sure your system is up to date.
 
-### Terminator  
+### Terminator
 ``` bash
 𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 𝑡𝑒𝑟𝑚𝑖𝑛𝑎𝑡𝑜𝑟
 ```
@@ -33,11 +33,14 @@ As of this writing the most current distribution of ROS2 is Humble Hawksbill.
 
 Enter ROS2 Documentation: Humble and choose Ubuntu (Debian). Follow the steps there including Setup locale, Setup Sources, Install ROS2 packages. Then, run the desktop installation command line to have all the ROS2 tools.
 
-By the end of the previous part, you should have `/𝑜𝑝𝑡/𝑟𝑜𝑠/ℎ𝑢𝑚𝑏𝑙𝑒 folder`.
+By the end of the previous part, you should have `/𝑜𝑝𝑡/𝑟𝑜𝑠/ℎ𝑢𝑚𝑏𝑙𝑒` directory.
 
 In order to use ROS2 you need to run: 𝑠𝑜𝑢𝑟𝑐𝑒 `/𝑜𝑝𝑡/𝑟𝑜𝑠/ℎ𝑢𝑚𝑏𝑙𝑒/𝑠𝑒𝑡𝑢𝑝.𝑏𝑎𝑠ℎ`. To avoid running this command again in any new terminal, add this command into `~/.𝑏𝑎𝑠ℎ𝑟𝑐`.
 
-NEW COMMAND: `𝑟𝑜𝑠2 𝑟𝑢𝑛 <𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸> <𝐸𝑋𝐸𝐶𝑈𝑇𝐴𝐵𝐿𝐸>`
+``` bash title="NEW COMMAND"
+𝑟𝑜𝑠2 𝑟𝑢𝑛 <𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸> <𝐸𝑋𝐸𝐶𝑈𝑇𝐴𝐵𝐿𝐸>
+```
+
 
 Check the `𝑑𝑒𝑚𝑜_𝑛𝑜𝑑𝑒𝑠_𝑐𝑝𝑝` package for practice (talker, listener etc.).
 
@@ -46,11 +49,15 @@ Check the `𝑑𝑒𝑚𝑜_𝑛𝑜𝑑𝑒𝑠_𝑐𝑝𝑝` package for pract
 ### Colcon:
 A build tool created for ROS2.
 
-`𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 p𝑦𝑡ℎ𝑜𝑛3−𝑐𝑜𝑙𝑐𝑜𝑛−𝑐𝑜𝑚𝑚𝑜𝑛−𝑒𝑥𝑡𝑒𝑛𝑠𝑖𝑜𝑛𝑠`
+``` bash
+𝑠𝑢𝑑𝑜 𝑎𝑝𝑡 𝑖𝑛𝑠𝑡𝑎𝑙𝑙 p𝑦𝑡ℎ𝑜𝑛3−𝑐𝑜𝑙𝑐𝑜𝑛−𝑐𝑜𝑚𝑚𝑜𝑛−𝑒𝑥𝑡𝑒𝑛𝑠𝑖𝑜𝑛𝑠
+```
 
 Auto completion feature is not enabled as default. To enable this feature, you will need to run:
 
-`source /usr/share/colcon_argcomplete/hook/colcon−argcomplete.bash`
+``` bash
+source /usr/share/colcon_argcomplete/hook/colcon−argcomplete.bash
+```
 
 Also here, it recommended to add this command into `~/.𝑏𝑎𝑠ℎ𝑟𝑐`.
 
@@ -67,14 +74,16 @@ In install folder, there is a 𝑠𝑒𝑡𝑢𝑝.𝑏𝑎𝑠ℎ file needs to
 
 The code in workspace will be organized in packages. All packages will be in the `~/𝑟𝑜𝑠2_𝑤𝑠/𝑠𝑟𝑐` folder. To create a new one, stand at this location and run:
 
-NEW COMMAND: `𝑟𝑜𝑠2 𝑝𝑘𝑔 𝑐𝑟𝑒𝑎𝑡𝑒<𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸>`
+```bash title="NEW COMMAND"
+𝑟𝑜𝑠2 𝑝𝑘𝑔 𝑐𝑟𝑒𝑎𝑡𝑒<𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸>
+```
 
 
-Commonly we will use this command with 2 additional parts:
+Usually we will use this command with 2 additional parts:
 
-`−−𝑏𝑢𝑖𝑙𝑑−𝑡𝑦𝑝𝑒<𝐵𝑈𝐼𝐿𝐷_𝑇𝑌𝑃𝐸>`: telling whether we want a python or cpp package. Enter here 𝑎𝑚𝑒𝑛𝑡_𝑝𝑦𝑡ℎ𝑜𝑛 or 𝑎𝑚𝑒𝑛𝑡_𝑐𝑚𝑎𝑘𝑒.
+`−−𝑏𝑢𝑖𝑙𝑑−𝑡𝑦𝑝𝑒 <𝐵𝑈𝐼𝐿𝐷_𝑇𝑌𝑃𝐸>`: telling whether we want a python or cpp package. Enter here 𝑎𝑚𝑒𝑛𝑡_𝑝𝑦𝑡ℎ𝑜𝑛 or 𝑎𝑚𝑒𝑛𝑡_𝑐𝑚𝑎𝑘𝑒.
 
-`−−𝑑𝑒𝑝𝑒𝑛𝑑𝑒𝑛𝑐𝑖𝑒𝑠<𝐷𝐸𝑃𝐸𝑁𝐷𝐸𝑁𝐶𝐼𝐸𝑆_𝐿𝐼𝑆𝑇>`: other packages we will use in ours.
+`−−𝑑𝑒𝑝𝑒𝑛𝑑𝑒𝑛𝑐𝑖𝑒𝑠 <𝐷𝐸𝑃𝐸𝑁𝐷𝐸𝑁𝐶𝐼𝐸𝑆_𝐿𝐼𝑆𝑇>`: other packages we will use in ours.
 
 A new package comes with a folder in it which has the same name as the package itself. There we will write our ROS2 nodes in the future. The package also comes with a 
 `𝑝𝑎𝑐𝑘𝑎𝑔𝑒.𝑥𝑚𝑙` file. This file contains some global details, the package dependencies and build type.
@@ -82,7 +91,9 @@ A new package comes with a folder in it which has the same name as the package i
 ### Compile ROS2 package:
 After writing some code, before running it, we need to build the package by standing at `~/𝑟𝑜𝑠2_𝑤𝑠` (the workspace folder) and run:
 
-COMMAND: `𝑐𝑜𝑙𝑐𝑜𝑛 𝑏𝑢𝑖𝑙𝑑`
+``` bash title="COMMAND"
+𝑐𝑜𝑙𝑐𝑜𝑛 𝑏𝑢𝑖𝑙𝑑
+```
 
 To build only specific packages you can use: `−−𝑝𝑎𝑐𝑘𝑎𝑔𝑒𝑠_𝑠𝑒𝑙𝑒𝑐𝑡<𝑃𝐴𝐶𝐾𝐴𝐺𝐸𝑆_𝐿𝐼𝑆𝑇>`
 
@@ -124,3 +135,10 @@ Usually we will not run our nodes as described in `Running ROS2 Node` section. T
 
 COMMAND: `𝑟𝑜𝑠2 𝑟𝑢𝑛 <𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸> <𝐸𝑋𝐸𝐶𝑈𝑇𝐴𝐵𝐿𝐸>`.
 
+``` py title="bubble_sort.py" linenums="1"
+def bubble_sort(items):
+    for i in range(len(items)):
+        for j in range(len(items) - 1 - i):
+            if items[j] > items[j + 1]:
+                items[j], items[j + 1] = items[j + 1], items[j]
+```
