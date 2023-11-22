@@ -135,7 +135,9 @@ Usually we will not run our nodes as described in `Running ROS2 Node` section. T
 
 COMMAND: `𝑟𝑜𝑠2 𝑟𝑢𝑛 <𝑃𝐴𝐶𝐾𝐴𝐺𝐸_𝑁𝐴𝑀𝐸> <𝐸𝑋𝐸𝐶𝑈𝑇𝐴𝐵𝐿𝐸>`.
 
-``` py title="bubble_sort.py" linenums="1"
+linenums="1"
+
+``` python title="bubble_sort.py"
 def bubble_sort(items):
     for i in range(len(items)):
         for j in range(len(items) - 1 - i):
